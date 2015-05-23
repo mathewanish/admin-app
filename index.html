@@ -1,0 +1,480 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>TechChef</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="css/jquery.mobile-1.3.0.css" />
+    <link rel="stylesheet" href="css/jqm-docs.css" />
+    <link rel="stylesheet" href="css/UIAdminCustom.css" />
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+     <script type="text/javascript" charset="utf-8">
+
+         // Wait for device API libraries to load
+         //
+         function onLoad() {
+             document.addEventListener("deviceready", onDeviceReady, false);
+         }
+
+         // device APIs are available
+         //
+         function onDeviceReady() {
+             setTimeout(function () {
+                 navigator.splashscreen.hide();
+             }, 100);
+             // Register the event listener
+             //document.addEventListener("backbutton", onBackKeyDown, false);
+         }
+
+    </script>
+    <script type="text/javascript">
+        google.load('visualization', '1', { packages: ['corechart'] });
+    </script>
+</head>
+<body onload="onLoad();" >
+    <div data-role="page" id="login" data-theme="c" class="tcb">
+        <div data-role="content">
+         
+            <div class="LoginHolder">
+               
+                <table width="100%" cellpadding="0" cellspacing="0" class="LoginTable">
+                    <tr>
+                        <td class="LoginLeft">
+                                <div class="SplashWords">
+                                <p>
+                                    Welcome to DMI’s 3rd annual Tech Chef grilling competition.</p>
+                                <p>
+                                    This competition will test our team's ability to prepare various dishes for our
+                                    guest judges.</p>
+                                <p>
+                                    The most impressive team will receive a championship trophy and take home bragging
+                                    rights for the year!</p>
+                                <p>
+                                    Good luck to all!!</p>
+                            </div>
+                        </td>
+                        <td class="LoginRight">
+                            <div class="LoginDiv">
+                                <div class="TitleDiv">
+                                    <div class="SiteLogo">
+                                        <img src="images/TechChef_Logo.png"></div>
+                                    <div class="SiteName">
+                                        Admin Login</div>
+                                </div>
+                                <div class="LoginInputs">
+                                    <div data-role="fieldcontain" data-theme="c">
+                                        <label for="textinput-fc" data-inline="true">
+                                        </label>
+                                        <input name="txtTabUsername" id="txtTabUsername" placeholder="Username" value=""
+                                            type="text" data-inline="true" maxlength="20" />
+                                    </div>
+                                    <div data-role="fieldcontain" data-theme="c">
+                                        <label for="password">
+                                        </label>
+                                        <input name="txtTabPassword" id="txtTabPassword" maxlength="15" placeholder="Password" value=""
+                                            autocomplete="off" type="password" data-inline="true" />
+                                    </div>
+                                    <div data-role="fieldcontain" data-theme="c">
+                                        <a href="#judgeScore" id="btlTabLoginSubmit" name="btlTabLoginSubmit" data-role="button"
+                                            data-inline="true" onclick="return AuthenticateUser('admin', true);">Submit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="LoginHolderSP">
+                <table width="100%" cellpadding="0" cellspacing="0" class="LoginTableSP">
+                    <tr>
+                        <td class="LoginSP">
+                            <div class="LoginDivSP">
+                                <div class="LoginInputsSP">
+                                    <div data-role="fieldcontain">
+                                        <label for="textinput-fc" data-inline="true">
+                                            Username:</label>
+                                        <input name="txtSPUsername" id="txtSPUsername" maxlength="20" placeholder="Username" value=""
+                                            type="text" data-inline="true" />
+                                    </div>
+                                    <div data-role="fieldcontain">
+                                        <label for="password">
+                                            Password:</label>
+                                        <input name="txtSPPassword" id="txtSPPassword" maxlength="15" placeholder="Password" value=""
+                                            autocomplete="off" type="password" data-inline="true" />
+                                    </div>
+                                    <div data-role="fieldcontain">
+                                        <label for="password">
+                                        </label>
+                                        <a href="#judgeScore" id="btlSPLoginSubmit" name="btlSPLoginSubmit" data-role="button"
+                                            data-inline="true" onclick="return AuthenticateUser('admin', false);">Submit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- /content -->
+    </div>
+    <div id="judgeScore" data-role="page" data-theme="e">
+        <div data-role="header" data-theme="e" data-position="fixed">
+            <div id="jsUser" class="SuperadminUser">
+            </div>
+            <h1>
+                TechChef</h1>
+            <div data-role="navbar" data-theme="e">
+                <ul data-theme="e">
+                    <li><a href="#judgeScore" class="ui-btn-active ui-state-persist">Score</a></li>
+                    <!--<li><a href="#employeeScore">Employee Score</a></li> -->
+                    <li><a href="#operations">Operations</a></li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /header -->
+        <div class="PageTitle">
+            Results<span id="jsRefresh" class="rating"><a href="#" onclick="return RefreshPage();"><img
+                src="images/refresh.png"></a></span></div>
+        <div data-role="content" data-theme="e">
+            <div style="overflow: auto; width: inherit" id="jstableContainer">
+            </div>
+            <div id="jtblEnlarge" class="Enlarge" style="padding-top: 5px">
+                <a href="#" onclick="SetEnlargedTableHtml('#jstableContainer', 'judge');">
+                    <img src="images/Enlarge.png" width="80" height="30" style="border: 0"></a></div>
+            <div id="ScoreByTeam" style="overflow-x: auto; overflow-y: hidden; height: 380px">
+            </div>
+            <div id="jTCEnlarge" class="Enlarge">
+                <a href="#" onclick="SetChartPageProperties('team', 'judge');">
+                    <img src="images/Enlarge.png" width="80" height="30" style="border: 0"></a></div>
+            <div id="ScoreByCategory" style="overflow-x: auto; overflow-y: hidden; height: 380px">
+            </div>
+            <div id="jCCEnlarge" class="Enlarge">
+                <a href="#" onclick="SetChartPageProperties('category', 'judge');">
+                    <img src="images/Enlarge.png" width="80" height="30" style="border: 0"></a></div>
+        </div>
+        <!-- /content -->
+    </div>
+    <div id="teamScore" data-role="page" data-theme="e" data-add-back-btn="true">
+        <div data-role="header" data-theme="e" data-position="fixed">
+            <div id="tsUser" class="SuperadminUser">
+            </div>
+            <h1>
+                TechChef</h1>
+            <div data-role="navbar" data-theme="e">
+                <ul data-theme="e">
+                    <li><a href="#judgeScore" class="ui-btn-active ui-state-persist">Score</a></li>
+                    <!--<li><a href="#employeeScore">Employee Score</a></li> -->
+                    <li><a href="#operations">Operations</a></li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /header -->
+        <div class="PageTitle" id="tsPageTitle">
+        </div>
+        <div data-role="content" data-theme="e">
+            <div id="tsCollapsible">
+            </div>
+        </div>
+        <!-- /content -->
+    </div>
+    <div id="categoryScore" data-role="page" data-theme="e" data-add-back-btn="true">
+        <div data-role="header" data-theme="e" data-position="fixed">
+            <div id="csUser" class="SuperadminUser">
+            </div>
+            <h1>
+                TechChef</h1>
+            <div data-role="navbar" data-theme="e">
+                <ul data-theme="e">
+                    <li><a href="#judgeScore" class="ui-btn-active ui-state-persist">Score</a></li>
+                    <!--<li><a href="#employeeScore">Employee Score</a></li> -->
+                    <li><a href="#operations">Operations</a></li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /header -->
+        <div class="PageTitle" id="csPageTitle">
+        </div>
+        <div data-role="content" data-theme="e">
+            <div id="csCollapsible">
+            </div>
+        </div>
+        <!-- /content -->
+    </div>
+    <div id="employeeScore" data-role="page" data-theme="e">
+        <div data-role="header" data-theme="e" data-position="fixed">
+            <div id="esUser" class="SuperadminUser">
+            </div>
+            <h1>
+                TechChef</h1>
+            <div data-role="navbar" data-theme="e">
+                <ul data-theme="e">
+                    <li><a href="#judgeScore">Score</a></li>
+                    <li><a href="#employeeScore" class="ui-btn-active ui-state-persist">Employee Score</a></li>
+                    <li><a href="#operations">Operations</a></li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /header -->
+        <div class="PageTitle">
+            Results<span class="rating"><a href="#" onclick="return RefreshPage();"><img src="images/refresh.png"></a></span></div>
+        <div data-role="content" data-theme="e">
+            <div style="overflow: auto; width: inherit" id="esTableContainer">
+            </div>
+            <div id="etblEnlarge" class="Enlarge" style="padding-top: 5px">
+                <a href="#" onclick="SetEnlargedTableHtml('#esTableContainer', 'emp');">
+                    <img src="images/Enlarge.png" width="80" height="30" style="border: 0"></a></div>
+            <div id="eScoreByTeam" style="overflow-x: auto; overflow-y: hidden; height: 380px">
+            </div>
+            <div id="eTCEnlarge" class="Enlarge">
+                <a href="#" onclick="SetChartPageProperties('team', 'emp');">
+                    <img src="images/Enlarge.png" width="80" height="30" style="border: 0"></a></div>
+            <div id="eScoreByCategory" style="overflow-x: auto; overflow-y: hidden; height: 380px">
+            </div>
+            <div id="eCCEnlarge" class="Enlarge">
+                <a href="#" onclick="SetChartPageProperties('category', 'emp');">
+                    <img src="images/Enlarge.png" width="80" height="30" style="border: 0"></a></div>
+        </div>
+        <!-- /content -->
+    </div>
+    <div id="employeeCatScore" data-role="page" data-theme="e" data-add-back-btn="true">
+        <div data-role="header" data-theme="e" data-position="fixed">
+            <div id="ecsUser" class="SuperadminUser">
+            </div>
+            <h1>
+                TechChef</h1>
+            <div data-role="navbar" data-theme="e">
+                <ul data-theme="e">
+                    <li><a href="#judgeScore">Score</a></li>
+                    <li><a href="#employeeScore" class="ui-btn-active ui-state-persist highlight ">Employee
+                        Score</a></li>
+                    <li><a href="#operations">Operations</a></li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /header -->
+        <div class="PageTitle" id="ecsPageTitle">
+        </div>
+        <div data-role="content" data-theme="e">
+            <div id="ecsCollapsible">
+            </div>
+        </div>
+        <!-- /content -->
+    </div>
+    <div id="employeeTeamScore" data-role="page" data-theme="e" data-add-back-btn="true">
+        <div data-role="header" data-theme="e" data-position="fixed">
+            <div id="etsUser" class="SuperadminUser">
+            </div>
+            <h1>
+                TechChef</h1>
+            <div data-role="navbar" data-theme="e">
+                <ul data-theme="e">
+                    <li><a href="#judgeScore">Score</a></li>
+                    <li><a href="#employeeScore" class="ui-btn-active ui-state-persist highlight ">Employee
+                        Score</a></li>
+                    <li><a href="#operations">Operations</a></li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /header -->
+        <div class="PageTitle" id="etsPageTitle">
+        </div>
+        <div data-role="content" data-theme="e">
+            <div id="etsCollapsible">
+            </div>
+        </div>
+        <!-- /content -->
+    </div>
+    <div id="employees" data-role="page" data-theme="e">
+        <div data-role="header" data-theme="e" data-position="fixed">
+            <div id="empUser" class="SuperadminUser">
+            </div>
+            <h1>
+                TechChef</h1>
+            <div data-role="navbar" data-theme="e">
+                <ul data-theme="e">
+                    <li><a href="#judgeScore">Score</a></li>
+                    <li><a href="#employeeScore" class="ui-btn-active ui-state-persist">Employee Score</a></li>
+                    <li><a href="#operations">Operations</a></li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /header -->
+        <div class="PageTitle">
+            Employee Scores<span class="rating"><a href="#employeeScore"><img src="images/Result.png"></a></span><span
+                class="rating"><a href="#" onclick="return RefreshPage();"><img src="images/refresh.png"></a></span></div>
+        <div data-role="content" data-theme="e">
+            <div class="EmpRating">
+                <ul id="employeesList" data-role="listview" data-theme="e" data-autodividers="true"
+                    data-filter="true" data-inset="true" data-filter-placeholder="Search Employees"
+                    data-mini="true">
+                </ul>
+            </div>
+        </div>
+        <!-- /content -->
+    </div>
+    <div id="employeeRating" data-role="page" data-theme="e" data-add-back-btn="true">
+        <div data-role="header" data-theme="e" data-position="fixed">
+            <div id="erUser" class="SuperadminUser">
+            </div>
+            <h1>
+                TechChef</h1>
+            <div data-role="navbar" data-theme="e">
+                <ul data-theme="e">
+                    <li><a href="#judgeScore">Score</a></li>
+                    <li><a href="#employeeScore" class="ui-btn-active ui-state-persist">Employee Score</a></li>
+                    <li><a href="#operations">Operations</a></li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /header -->
+        <div class="PageTitle" id="erPageTitle">
+        </div>
+        <div data-role="content" data-theme="e">
+            <div id="erCollapsible">
+            </div>
+        </div>
+        <!-- /content -->
+    </div>
+    <div id="judges" data-role="page" data-theme="e">
+        <div data-role="header" data-theme="e" data-position="fixed">
+            <div id="judgeUser" class="SuperadminUser">
+            </div>
+            <h1>
+                TechChef</h1>
+            <div data-role="navbar" data-theme="e">
+                <ul data-theme="e">
+                    <li><a href="#judgeScore" class="ui-btn-active ui-state-persist">Score</a></li>
+                    <!--<li><a href="#employeeScore">Employee Score</a></li> -->
+                    <li><a href="#operations">Operations</a></li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /header -->
+        <div class="PageTitle">
+            Scores<span class="rating"><a href="#judgeScore"><img src="images/Result.png"></a></span><span
+                class="rating"><a href="#" onclick="return RefreshPage();"><img src="images/refresh.png"></a></span></div>
+        <div data-role="content" data-theme="e">
+            <div class="EmpRating">
+                <ul id="judgesList" data-role="listview" data-theme="e" data-autodividers="true"
+                    data-filter="true" data-inset="true" data-filter-placeholder="Search Judges"
+                    data-mini="true">
+                </ul>
+            </div>
+        </div>
+        <!-- /content -->
+    </div>
+    <div id="judgeRating" data-role="page" data-theme="e" data-add-back-btn="true">
+        <div data-role="header" data-theme="e" data-position="fixed">
+            <div id="jrUser" class="SuperadminUser">
+            </div>
+            <h1>
+                TechChef</h1>
+            <div data-role="navbar" data-theme="e">
+                <ul data-theme="e">
+                    <li><a href="#judgeScore" class="ui-btn-active ui-state-persist">Score</a></li>
+                    <!--<li><a href="#employeeScore">Employee Score</a></li> -->
+                    <li><a href="#operations">Operations</a></li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /header -->
+        <div class="PageTitle" id="jrPageTitle">
+        </div>
+        <div data-role="content" data-theme="e">
+            <div id="jrCollapsible">
+            </div>
+        </div>
+        <!-- /content -->
+    </div>
+    <div id="operations" data-role="page" data-theme="e" data-add-back-btn="true">
+        <div data-role="header" data-theme="e" data-position="fixed">
+            <div id="sUser" class="SuperadminUser">
+            </div>
+            <h1>
+                TechChef</h1>
+            <div data-role="navbar" data-theme="e">
+                <ul data-theme="e">
+                    <li><a href="#judgeScore">Score</a></li>
+                    <!--<li><a href="#employeeScore">Employee Score</a></li> -->
+                    <li><a href="#operations" class="ui-btn-active ui-state-persist">Operations</a></li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /header -->
+        <div class="PageTitle" id="sPageTitle">
+            Operations<span class="rating"><a href="#" onclick="return RefreshPage();"><img src="images/refresh.png"></a></span>
+        </div>
+        <div data-role="content">
+            <div id="dOperations">
+            </div>
+        </div>
+        <!-- /content -->
+    </div>
+    <div id="chartPage" data-role="page" data-theme="e" data-add-back-btn="true">
+        <div data-role="header" data-theme="e" data-position="fixed">
+            <div id="chrtUser" class="SuperadminUser">
+            </div>
+            <h1>
+                TechChef</h1>
+        </div>
+        <!-- /header -->
+        <div class="PageTitle">
+            <span class="rating"><a href="#" onclick="return RefreshPage();">
+                <img src="images/refresh.png"></a></span>
+        </div>
+        <div data-role="content" data-theme="e">
+            <div id="cpChart" style="overflow-x: auto;">
+            </div>
+        </div>
+        <!-- /content -->
+    </div>
+    <div id="tablePage" data-role="page" data-theme="e" data-add-back-btn="true">
+        <div data-role="header" data-theme="e" data-position="fixed">
+            <div id="tblUser" class="SuperadminUser">
+            </div>
+            <h1>
+                TechChef</h1>
+        </div>
+        <!-- /header -->
+        <div class="PageTitle" id="tablePageTitle">
+            Employee Results<span class="rating"><a href="#employees"><img src="images/Rating.png"></a></span><span
+                class="rating"><a href="#" onclick="return RefreshPage();"><img src="images/refresh.png"></a></span></div>
+        <div data-role="content" data-theme="e">
+            <div id="tblResult">
+            </div>
+        </div>
+        <!-- /content -->
+    </div>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript">
+        var autoRefresh;
+
+        $(document).on("mobileinit", function () {
+            $.mobile.defaultPageTransition = 'slide';
+            $.mobile.phonegapNavigationEnabled = true;
+
+            $.mobile.loader.prototype.options.textVisible = true;
+            $.mobile.loader.prototype.options.theme = "a";
+            $.mobile.loader.prototype.options.html = "";
+
+            var autoRefresh = setInterval(function () { RefreshPage() }, 60000);
+        });
+        
+    </script>
+    <script type="text/javascript" src="js/jqm-docs.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.3.0.min.js"></script>
+    <script type="text/javascript" src="js/admin.js"></script>
+</body>
+</html>

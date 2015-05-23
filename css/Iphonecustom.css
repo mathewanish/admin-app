@@ -1,0 +1,245 @@
+
+.ui-body-c,
+.ui-overlay-c {
+	border: 1px solid #aaa /*{c-body-border}*/;
+	color: 					#333 /*{c-body-color}*/;
+	text-shadow: 0 /*{c-body-shadow-x}*/ 1px /*{c-body-shadow-y}*/ 0 /*{c-body-shadow-radius}*/ #fff /*{c-body-shadow-color}*/;
+	background-color: #fbd766 /*{c-body-background-color}*/;
+	background-image:url(../images/AppBg.jpg) !important ;
+	background-position:right top;
+
+}
+
+
+
+.ui-overlay-c {
+	border-width: 0;
+}
+.ui-block-b{
+	width:100%
+
+}
+
+
+.ui-block-a .ui-bar-e{
+background-color:transparent !important;
+background-image:none;
+border:0;
+}
+.ui-block-b .ui-bar-e {
+	border: 0 /*{e-bar-border}*/;
+	background:transparent /*{e-bar-background-color}*/;
+	background-image: url(../images/Loginbox.png);
+	background-repeat:no-repeat;
+	background-color:transparent;
+
+}
+.ui-btn-inner { font-size: 14px; padding:5px 10; min-width: auto; display: block; position: relative;  text-overflow: ellipsis; overflow: hidden; white-space: nowrap; zoom: 1; }
+
+.ui-btn-up-c {
+	border: 1px solid 		#333 /*{c-bup-border}*/;
+	background: 			#eee /*{c-bup-background-color}*/;
+	font-weight: bold;
+	color: 					#222 /*{c-bup-color}*/;
+	text-shadow: 0 /*{c-bup-shadow-x}*/ 1px /*{c-bup-shadow-y}*/ 0 /*{c-bup-shadow-radius}*/ #fff /*{c-bup-shadow-color}*/;
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #f9c635 /*{c-bup-background-start}*/), to( #e9a80b /*{c-bup-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #f9c635 /*{c-bup-background-start}*/, #e9a80b /*{c-bup-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #f9c635 /*{c-bup-background-start}*/, #e9a80b /*{c-bup-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #f9c635 /*{c-bup-background-start}*/, #e9a80b /*{c-bup-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #f9c635 /*{c-bup-background-start}*/, #e9a80b /*{c-bup-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #f9c635 /*{c-bup-background-start}*/, #e9a80b /*{c-bup-background-end}*/);
+}
+
+.ui-field-contain, .ui-mobile fieldset.ui-field-contain { border-width: 0; padding: 0; margin: .3em 0; }
+
+.ui-field-contain div.ui-input-text { width: 100%; display:block; font-size:14px }
+
+label.ui-input-text{
+font-weight:normal !important;
+font-size:14px
+}
+
+input.ui-input-text, textarea.ui-input-text{
+font-size:14px;
+background-color:#FFF !important;
+font-weight:normal !important;
+}
+
+.ui-overlay-e{
+border:1px
+}
+
+.ui-btn-inner { font-size: 14px; padding:8px; min-width: auto; display: inline-block ; position: relative; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; zoom: 1; 
+}
+
+
+
+/*---SMART PHONE CLASSES--*/
+
+
+.WelcomePara{
+font-weight:normal;
+text-shadow: 0 /*{e-bar-shadow-x}*/ 1px /*{e-bar-shadow-y}*/ 0 /*{e-bar-shadow-radius}*/ 	#fff /*{e-bar-shadow-color}*/;
+margin-top:0
+}
+
+
+.LoginInputsSP{
+width:180px ;
+position:relative;
+left:85px;
+top:80px;
+margin:0;
+padding:0
+}
+
+
+
+.LoginInputsSP .ui-btn-up-c,
+.LoginInputsSP .ui-btn-hover-c
+{
+float:right
+}
+
+.LoginInputsSP  .ui-btn-corner-all {
+	-webkit-border-radius: 				.8em /*{global-radii-buttons}*/;
+	border-radius: 						.8em /*{global-radii-buttons}*/;
+}
+
+.LoginInputsSP .ui-body-c,
+.LoginInputsSP .ui-overlay-c{
+background-image:none !important ;
+background-color:#fff !important ;
+border: 1px solid #555
+}
+
+
+
+.LoginHolderSP{
+position:absolute;
+top:50%;
+left:50%;
+width:300px;
+display:block;
+margin:0 auto;
+margin-top:-165px;
+margin-left:-150px
+}
+
+@media screen and (max-width:480px) { 
+.LoginHolderSP{
+position:absolute;
+top:20px;
+left:50%;
+width:300px;
+display:block;
+margin:0 auto;
+margin-left:-150px
+}
+}
+
+.LoginTableSP{
+width:100%;
+margin:0 ;
+}
+
+.LoginSP{
+width:300px;
+vertical-align:middle;
+padding:0 
+
+}
+
+.LoginDivSP{
+width:300px;
+height:330px;
+background-image:url(../images/LoginboxIphone.png);
+background-repeat:no-repeat;
+margin:0;
+
+}
+
+
+
+/*---SMART PHONE CLASSES--*/
+
+
+
+/*---IPAD CLASSES--*/
+
+.WelcomePara{
+font-weight:normal;
+text-shadow: 0 /*{e-bar-shadow-x}*/ 1px /*{e-bar-shadow-y}*/ 0 /*{e-bar-shadow-radius}*/ 	#fff /*{e-bar-shadow-color}*/;
+margin-top:0
+}
+
+@media screen and (max-width:320px) { .WelcomePara { display:none } }
+
+.WelcomeTitle{
+margin:0
+}
+
+
+.LoginWord{
+font-size:16px;
+color:#600;
+border-bottom:1px dashed #333;
+padding:5px 0;
+margin-top:20px
+}
+
+.LoginInputs{
+width:295px ;
+position:relative;
+left:115px;
+top:100px
+}
+
+.LoginInputs .ui-body-c,
+.LoginInputs .ui-overlay-c{
+background-image:none !important ;
+background-color:#fff !important ;
+border: 1px solid #777
+}
+
+.Logodiv{
+height:200px;
+background-image:url(../images/TechChef_Logo.png);
+background-position:center ;
+background-repeat:no-repeat;
+margin-bottom:15px
+}
+
+.LoginTable{
+width:99%;
+margin:0 auto;
+}
+
+.LoginLeft{
+width:100%;
+vertical-align:middle;
+padding:0 30px
+}
+
+.LoginRight{
+width:450px;
+vertical-align:middle;
+
+}
+
+.LoginDiv{
+width:450px;
+height:490px;
+background-image:url(../images/Loginbox.png);
+background-repeat:no-repeat
+}
+
+
+
+.LoginHolder{
+position: absolute;
+height:490px;
+display:block;
+top: 50%;
+margin-top:-245px;
+}
