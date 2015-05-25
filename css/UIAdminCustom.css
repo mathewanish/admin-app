@@ -2,7 +2,11 @@ body{
 background-color: #f2bd72/*{c-body-background-color}*/;
 }
 
-
+.score_chart{
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+}
 
 .ui-grid-a{
 margin-top:0.8em !important

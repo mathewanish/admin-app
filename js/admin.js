@@ -43,6 +43,7 @@ var enlargeTableTitle = '';
 var ISCLIENTAPP = false;
 
 var SCORING_OPEN = true;
+var TOTAL_HEADER = 'Total';
 
 $("#login").on("pagebeforecreate", function (event, ui) {
 
@@ -236,6 +237,7 @@ $('#judgeScore').on('pageshow', function (event, ui) {
 
     JudgesScoreByTeams('jsTable');
     JudgesScoreByCategory('jsTable');
+    //ReOrderColumn();
 });
 
 
@@ -267,7 +269,14 @@ function RefreshJudgeScore(page) {
     RenderJudgeScore(page);
     JudgesScoreByTeams('jsTable');
     JudgesScoreByCategory('jsTable');
+    //ReOrderColumn();
 }
+
+function ReOrderColumn() {
+    var tbl = $('#jsTable');
+    $.moveColumn(tbl, 5, 4);
+}
+
 
 function RenderJudgeScore(prevPage) {
 
@@ -311,13 +320,14 @@ function GetJudgeScore() {
     }
 }
 
-
+var testObject;
 function ShowJudgeScore() {
 
     var messageValue = eval(master_results);
 
     if (messageValue != null && messageValue.length > 0) {
-        tempObject = DrawTable(messageValue, "1", true, 'team', 'category', 'jsTable', 'Scoretable');
+        testObject =  messageValue;
+        tempObject = DrawJSTable(messageValue, "1", true, 'team', 'category', 'jsTable', 'Scoretable');
 
         $("#jstableContainer").html(tempObject);
 
@@ -327,6 +337,8 @@ function ShowJudgeScore() {
 
             });
         });
+
+        ReOrderColumn();
 
         $("#jtblEnlarge").show();
         $("#jTCEnlarge").show();
@@ -373,6 +385,7 @@ function MaxObject(value) {
 }
 
 function DrillDown(dType, value, tableID) {
+    
     if (dType == "team") {
 
         if (tableID == "jsTable") {
@@ -449,6 +462,103 @@ function GetCategoryTitle(categoryID) {
     return categoryTitle;
 }
 
+
+function DrawJSTable(rawObject, sectionId, showTotal, aFirstRow, aFirstColumn, tableID, cssClass) {
+
+    var table = String.format("<table id='{0}' width='100%' border='1' cellpadding='0' cellspacing='0' class='{1}'>", tableID, cssClass);
+    var tableHeader = "";
+    var tableRow = "";
+    var row = 0;
+    var column = 0;
+    var totoalColumnNo = -1;
+    var rowTotal = 0;
+
+    maxArray = new Array();
+
+    $.each(rawObject, function () {
+
+        if (row == 0) {
+            tableHeader = "<tr><th></th>";
+        }
+
+        if (aFirstColumn != '')
+            tableRow = String.format("<tr><td class='anchorcell' onclick='return DrillDown(\"{1}\", \"{0}\", \"{2}\");'>{0}</td>", this.rowTitle, aFirstRow, tableID);
+        else
+            tableRow = String.format("<tr><td class='first'>{0}</td>", this.rowTitle);
+
+        column = 0;
+        $.each(this.columns, function () {
+            if (row == 0) {
+                if (aFirstColumn != '')
+                    tableHeader += String.format("<th class='anchorcell' onclick='return DrillDown(\"{1}\", \"{0}\", \"{2}\");'>{0}</th>", this.ch, aFirstColumn, tableID);
+                else
+                    tableHeader += String.format("<th>{0}</th>", this.ch);
+
+                var maxObj = new MaxObject(0);
+                maxArray.push(maxObj);
+            }
+           
+            if (this.ch != 'Style') {
+                tableRow += String.format("<td id='c{1}_{0}_{3}'>{2}</td>", column, row, this.cc, sectionId);
+                rowTotal += parseInt(this.cc);
+            }
+            else
+                tableRow += String.format("<td class='Total' id='c{1}_{0}_{3}'>{2}</td>", column, row, this.cc, sectionId);
+
+            if (maxArray[column].Value < parseInt(this.cc)) {
+                maxArray[column].CellIds = new Array();
+                maxArray[column].Value = parseInt(this.cc);
+                maxArray[column].CellIds.push(String.format("c{1}_{0}_{2}", column, row, sectionId));
+            }
+            else if (maxArray[column].Value == parseInt(this.cc)) {
+                maxArray[column].CellIds.push(String.format("c{1}_{0}_{2}", column, row, sectionId));
+            }
+            column++;
+        });
+
+        if (row == 0) {
+            if (showTotal) {
+                tableHeader += String.format("<th>{0}</th>", TOTAL_HEADER);
+            }
+            table += tableHeader;
+            table += "</tr>";
+            var maxObj = new MaxObject(0);
+            maxArray.push(maxObj);
+        }
+        if (showTotal)
+            tableRow += String.format("<td class='Total' id='c{1}_{0}_{3}'>{2}</td>", column, row, rowTotal, sectionId);
+        tableRow += "</tr>";
+
+        if (maxArray[column].Value < parseInt(rowTotal)) {
+            maxArray[column].CellIds = new Array();
+            maxArray[column].Value = parseInt(rowTotal);
+            maxArray[column].CellIds.push(String.format("c{1}_{0}_{2}", column, row, sectionId));
+        }
+        else if (maxArray[column].Value == parseInt(rowTotal)) {
+            maxArray[column].CellIds.push(String.format("c{1}_{0}_{2}", column, row, sectionId));
+        }
+
+
+        row++;
+        rowTotal = 0;
+        table += tableRow;
+
+
+    });
+    table += "</table>";
+
+    return table;
+}
+
+
+$.moveColumn = function (table, from, to) {
+    var rows = $('tr', table);
+    var cols;
+    rows.each(function () {
+        cols = $(this).children('th, td');
+        cols.eq(from).detach().insertBefore(cols.eq(to));
+    });
+}
 
 function DrawTable(rawObject, sectionId, showTotal, aFirstRow, aFirstColumn, tableID, cssClass) {
     
@@ -537,22 +647,34 @@ function GetJudgesScoreByCategory(tableID) {
     var strJson = '';
 
     if (table != null) {
+        //Default value
+        var TotalIndex = -1;
+
         for (var i = 0, row; row = table.rows[i]; i++) {
             var strRow = '';
-            for (var j = 0, col; j < row.cells.length - 1; j++) {
+            for (var j = 0, col; j < row.cells.length; j++) {
                 col = row.cells[j];
+
+                if (col.innerText == TOTAL_HEADER) {
+                    TotalIndex = j;
+                    continue;
+                }
 
                 if (i == 0) {
                     if (j == 0)
                         strRow = "'Teams'";
-                    else
-                        strRow += String.format(",'{0}'", col.innerText);
+                    else {
+                        if (j != TotalIndex)
+                            strRow += String.format(",'{0}'", col.innerText);
+                    }
                 }
                 else {
-                    if (j == 0)
-                        strRow = "'" + col.innerText + "'";
-                    else
-                        strRow += String.format(",{0}", col.innerText);
+                    if (j != TotalIndex) {
+                        if (j == 0)
+                            strRow = "'" + col.innerText + "'";
+                        else
+                            strRow += String.format(",{0}", col.innerText);
+                    }
                 }
             }
 
@@ -575,9 +697,19 @@ function GetJudgesScoreByTeams(tableID) {
     if (table != null) {
         var strHeader = ''
         var strValues = '';
+        var TotalIndex = 0;
 
         for (var i = 0, row; row = table.rows[i]; i++) {
    
+            if (i == 0) {
+                for (var j = 0, col; j < row.cells.length; j++) {
+                    if (row.cells[j].innerText == TOTAL_HEADER) {
+                        TotalIndex = j;
+                        break;
+                    }
+                }
+            }
+
             for (var j = 0, col; j < row.cells.length - 1; j++) {
                 col = row.cells[j];
 
@@ -587,7 +719,7 @@ function GetJudgesScoreByTeams(tableID) {
                 }
                 else {
                     strHeader += String.format(",'{0}'", col.innerText);
-                    strValues += String.format(",{0}", row.cells[row.cells.length - 1].innerText);
+                    strValues += String.format(",{0}", row.cells[TotalIndex].innerText);
                 }
 
                 break;
@@ -826,7 +958,6 @@ function GetTeamScore() {
 
     if (checkConnection()) {
         var GetUrl = SERVICE_BASEURL + String.format("Chef/ReportByTeam?team_id={0}&userId={1}", selectedTeamID, UserID);
-
         $.ajax({
             type: "GET", //GET or POST or PUT or DELETE verb
             url: GetUrl, // Location of the service                

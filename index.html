@@ -19,6 +19,8 @@
          // device APIs are available
          //
          function onDeviceReady() {
+             StatusBar.overlaysWebView(false);
+
              setTimeout(function () {
                  navigator.splashscreen.hide();
              }, 100);
