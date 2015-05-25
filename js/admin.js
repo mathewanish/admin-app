@@ -101,7 +101,7 @@ function onBackKeyDown() {
         try {
             navigator.notification.confirm('Are you sure you want to Log Out?',
             function (button) { if (button == 1) $.mobile.changePage("index.html", { transition: "slidedown", changeHash: true }); },
-            'TechChef', 'Yes,No');
+            'TECH CHEF', 'Yes,No');
         }
         catch (Err) {
 
@@ -1525,7 +1525,7 @@ function confirmClear() {
     if (ISCLIENTAPP) {
         try {
             navigator.notification.confirm('Are you sure to clear the scores of Judges and Employees?', function (button) { if (button == 1) clearScores(); },
-            'TechChef', 'Yes,No');
+            'TECH CHEF', 'Yes,No');
         }
         catch (Err) {
 
@@ -1773,7 +1773,7 @@ function confirmStatusChange(changedStatus) {
     if (ISCLIENTAPP) {
         try {
             navigator.notification.confirm('Are you sure to change the competition status?', function (button) { if (button == 1) ChangeStatus(changedStatus); },
-            'TechChef', 'Yes,No');
+            'TECH CHEF', 'Yes,No');
         }
         catch (Err) {
 
@@ -1827,7 +1827,7 @@ function ChangeStatus(changedStatus) {
 }
 
 function NotifyUser(message) {
-    showAlert(message, 'TechChef', 'OK');
+    showAlert(message, 'TECH CHEF', 'OK');
 }
 
 
