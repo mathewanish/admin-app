@@ -293,10 +293,17 @@ cursor: pointer;
     background-color: #E47F34;
     color: #FFFFFF !important;
 }
-.Total.HighstMarks {
-    background-color: #0083C4;
+.Total1.HighstMarks {
+    background-color: #538e13 !important;
     color: #FFFFFF !important;
 }
+
+.Total2.HighstMarks {
+    background-color: #0083C4 !important;
+    color: #FFFFFF !important;
+}
+
+
 .Scoretable th {
     font-size: 14px !important;
 }
@@ -707,9 +714,16 @@ overflow-y:visible !important;
  }
   
 
-.Total{
+.Total1{
 margin-top:15px !important;
+background-color: #d6f48f;
 }
+
+.Total2{
+margin-top:15px !important;
+background-color: #cdefff;
+}
+
 
 .ui-grid-a{
 margin-top:0.5em !important
@@ -1206,6 +1220,9 @@ background-color:#1a537a;
 background-image:none
 }
 
+    .aciveTab {
+        background-color:#f9dfbb !important;
+    }
 
 .SMbodybg .ui-grid-a
 {

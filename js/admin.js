@@ -40,10 +40,10 @@ var cType, cUserType;
 var chartWidth, chartHeight;
 var enlargeTableHtml = '';
 var enlargeTableTitle = '';
-var ISCLIENTAPP = false;
+var ISCLIENTAPP = true;
 
 var SCORING_OPEN = true;
-var TOTAL_HEADER = 'Total';
+var TOTAL_HEADER = 'Judge(s) Total';
 
 $("#login").on("pagebeforecreate", function (event, ui) {
 
@@ -101,7 +101,7 @@ function onBackKeyDown() {
         try {
             navigator.notification.confirm('Are you sure you want to Log Out?',
             function (button) { if (button == 1) $.mobile.changePage("index.html", { transition: "slidedown", changeHash: true }); },
-            'TechChef', 'Yes,Cancel');
+            'TechChef', 'Yes,No');
         }
         catch (Err) {
 
@@ -503,7 +503,7 @@ function DrawJSTable(rawObject, sectionId, showTotal, aFirstRow, aFirstColumn, t
                 rowTotal += parseInt(this.cc);
             }
             else
-                tableRow += String.format("<td class='Total' id='c{1}_{0}_{3}'>{2}</td>", column, row, this.cc, sectionId);
+                tableRow += String.format("<td class='Total2' id='c{1}_{0}_{3}'>{2}</td>", column, row, this.cc, sectionId);
 
             if (maxArray[column].Value < parseInt(this.cc)) {
                 maxArray[column].CellIds = new Array();
@@ -526,7 +526,7 @@ function DrawJSTable(rawObject, sectionId, showTotal, aFirstRow, aFirstColumn, t
             maxArray.push(maxObj);
         }
         if (showTotal)
-            tableRow += String.format("<td class='Total' id='c{1}_{0}_{3}'>{2}</td>", column, row, rowTotal, sectionId);
+            tableRow += String.format("<td class='Total1' id='c{1}_{0}_{3}'>{2}</td>", column, row, rowTotal, sectionId);
         tableRow += "</tr>";
 
         if (maxArray[column].Value < parseInt(rowTotal)) {
@@ -1525,7 +1525,7 @@ function confirmClear() {
     if (ISCLIENTAPP) {
         try {
             navigator.notification.confirm('Are you sure to clear the scores of Judges and Employees?', function (button) { if (button == 1) clearScores(); },
-            'TechChef', 'Yes,Cancel');
+            'TechChef', 'Yes,No');
         }
         catch (Err) {
 
@@ -1773,7 +1773,7 @@ function confirmStatusChange(changedStatus) {
     if (ISCLIENTAPP) {
         try {
             navigator.notification.confirm('Are you sure to change the competition status?', function (button) { if (button == 1) ChangeStatus(changedStatus); },
-            'TechChef', 'Yes,Cancel');
+            'TechChef', 'Yes,No');
         }
         catch (Err) {
 
