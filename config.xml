@@ -1,16 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<widget xmlns = "http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.DMI.aTechChef" version="0.0.1">
+<widget xmlns = "http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.DMI.aTechChef" version="0.0.2">
   <name>aTECH CHEF</name>
-  <description>App for DMI’s 4th annual TECH CHEF grilling competition.</description>
-  <author href="http://DMInc.com" email="amathew@dminc.in">Anish Mathew</author>
+  <description>App for DMI’s 5th annual TECH CHEF grilling competition.</description>
+  <author href="http://DMInc.com" email="amathew@dminc.com">Anish Mathew</author>
 
-  <gap:plugin name="org.apache.cordova.dialogs" />
-  <gap:plugin name="org.apache.cordova.splashscreen" />
-  <gap:plugin name="org.apache.cordova.network-information" />
-  <gap:plugin name="org.apache.cordova.statusbar" />
+  <plugin name="org.apache.cordova.dialogs" />
+  <plugin name="org.apache.cordova.splashscreen" version="0.2.7" source="pgb"/>
+  <plugin name="org.apache.cordova.network-information" />
+  <plugin name="org.apache.cordova.statusbar" />
 
   <!-- Platform on which the App is Supported -->
-  <gap:platform name="ios" />
+  <platform name="ios" />
+
+  <content src="index.html" />
 
   <!-- Preferences-->
   <preference name="phonegap-version" value="3.7.0" />
@@ -21,47 +23,52 @@
   <preference name="exit-on-suspend" value="true" />
   <!-- iOS: Auto hides the splash on iOS -->
   <preference name="AutoHideSplashScreen" value="false" />
+  <preference name="SplashScreenDelay" value="3000"/>
+  <preference name="StatusBarOverlaysWebView" value="true" />
+  <preference name="StatusBarBackgroundColor" value="#000000" />
+  <preference name="StatusBarStyle" value="lightcontent" />
 
   <!-- Default Icon-->
   <icon src="icon.png" />
 
   <!--Icons - iOS 7-->
   <!-- iPhone / iPod Touch  -->
-  <icon src="icons/ios6/icon60.png" gap:platform="ios" width="60" height="60" />
-  <icon src="icons/ios6/icon120.png" gap:platform="ios" width="120" height="120" />
+  <icon src="icons/ios6/icon60.png" platform="ios" width="60" height="60" />
+  <icon src="icons/ios6/icon120.png" platform="ios" width="120" height="120" />
   <!-- iPad -->
-  <icon src="icons/ios6/icon76.png" gap:platform="ios" width="76" height="76" />
-  <icon src="icons/ios6/icon152.png" gap:platform="ios" width="152" height="152" />
+  <icon src="icons/ios6/icon76.png" platform="ios" width="76" height="76" />
+  <icon src="icons/ios6/icon152.png" platform="ios" width="152" height="152" />
   <!-- Settings Icon -->
-  <icon src="icons/ios6/icon29.png" gap:platform="ios" width="29" height="29" />
-  <icon src="icons/ios6/icon58.png" gap:platform="ios" width="58" height="58" />
+  <icon src="icons/ios6/icon29.png" platform="ios" width="29" height="29" />
+  <icon src="icons/ios6/icon58.png" platform="ios" width="58" height="58" />
   <!-- Spotlight Icon -->
-  <icon src="icons/ios6/icon40.png" gap:platform="ios" width="40" height="40" />
-  <icon src="icons/ios6/icon80.png" gap:platform="ios" width="80" height="80" />
+  <icon src="icons/ios6/icon40.png" platform="ios" width="40" height="40" />
+  <icon src="icons/ios6/icon80.png" platform="ios" width="80" height="80" />
 
   <!--Icons - iOS 6.1-->
   <!-- iPhone / iPod Touch -->
-  <icon src="icons/ios6/icon57.png" gap:platform="ios" width="57" height="57" />
-  <icon src="icons/ios6/icon114.png" gap:platform="ios" width="114" height="114" />
+  <icon src="icons/ios6/icon57.png" platform="ios" width="57" height="57" />
+  <icon src="icons/ios6/icon114.png" platform="ios" width="114" height="114" />
   <!-- iPad -->
-  <icon src="icons/ios6/icon72.png" gap:platform="ios" width="72" height="72" />
-  <icon src="icons/ios6/icon144.png" gap:platform="ios" width="144" height="144" />
+  <icon src="icons/ios6/icon72.png" platform="ios" width="72" height="72" />
+  <icon src="icons/ios6/icon144.png" platform="ios" width="144" height="144" />
   <!-- iPhone Spotlight and Settings Icon -->
-  <icon src="icons/ios6/icon29.png" gap:platform="ios" width="29" height="29" />
-  <icon src="icons/ios6/icon58.png" gap:platform="ios" width="58" height="58" />
+  <icon src="icons/ios6/icon29.png" platform="ios" width="29" height="29" />
+  <icon src="icons/ios6/icon58.png" platform="ios" width="58" height="58" />
   <!-- iPad Spotlight and Settings Icon -->
-  <icon src="icons/ios6/icon50.png" gap:platform="ios" width="50" height="50" />
-  <icon src="icons/ios6/icon100.png" gap:platform="ios" width="100" height="100" />
+  <icon src="icons/ios6/icon50.png" platform="ios" width="50" height="50" />
+  <icon src="icons/ios6/icon100.png" platform="ios" width="100" height="100" />
 
   <!-- Default Splash Screen-->
-  <gap:splash src="splash.png" />
+  <splash src="splash.png" />
 
   <!-- iOS Splash Screen-->
   <!-- iPad -->
-  <gap:splash src="splashes/ios/768x1024.png" gap:platform="ios" width="768" height="1024" />
-  <gap:splash src="splashes/ios/1024x768.png" gap:platform="ios" width="1024" height="768" />
+  <splash src="splashes/ios/768x1024.png" platform="ios" width="768" height="1024" />
+  <splash src="splashes/ios/1024x768.png" platform="ios" width="1024" height="768" />
+
   <!-- Retina iPad -->
-  <gap:splash src="splashes/ios/1536x2048.png" gap:platform="ios" width="1536" height="2048" />
-  <gap:splash src="splashes/ios/2048x1536.png" gap:platform="ios" width="2048" height="1536" />
+  <splash src="splashes/ios/1536x2048.png" platform="ios" width="1536" height="2048" />
+  <splash src="splashes/ios/2048x1536.png" platform="ios" width="2048" height="1536" />
 
 </widget >
