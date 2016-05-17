@@ -23,10 +23,17 @@
   <preference name="exit-on-suspend" value="true" />
   <!-- iOS: Auto hides the splash on iOS -->
   <preference name="AutoHideSplashScreen" value="false" />
-  <preference name="SplashScreenDelay" value="3000"/>
+  <preference name="SplashScreenDelay" value="4000"/>
   <preference name="StatusBarOverlaysWebView" value="true" />
   <preference name="StatusBarBackgroundColor" value="#000000" />
   <preference name="StatusBarStyle" value="lightcontent" />
+  <preference name="FadeSplashScreen" value="true"/>
+  <preference name="FadeSplashScreenDuration" value="0.7"/>
+
+  <feature name="SplashScreen">
+    <param name="ios-package" value="CDVSplashScreen" />
+    <param name="onload" value="true" />
+  </feature>
 
   <!-- Default Icon-->
   <icon src="icon.png" />

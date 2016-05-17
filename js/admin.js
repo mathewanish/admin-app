@@ -237,6 +237,7 @@ $('#judgeScore').on('pageshow', function (event, ui) {
 
     JudgesScoreByTeams('jsTable');
     JudgesScoreByCategory('jsTable');
+    //alert('Test');
     //ReOrderColumn();
 });
 

@@ -22,7 +22,7 @@
              StatusBar.overlaysWebView(false);
              setTimeout(function () {
                  navigator.splashscreen.hide();
-             }, 100);
+             }, 2000);
              // Register the event listener
              //document.addEventListener("backbutton", onBackKeyDown, false);
          }
@@ -457,7 +457,8 @@
         var autoRefresh;
 
         $(document).on("mobileinit", function () {
-            $.mobile.defaultPageTransition = 'slide';
+            //$.mobile.defaultPageTransition = 'slide';
+            $.mobile.changePage.defaults.allowSamePageTransition = true;
             $.mobile.phonegapNavigationEnabled = true;
 
             $.mobile.loader.prototype.options.textVisible = true;
