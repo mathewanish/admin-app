@@ -28,12 +28,12 @@
   <preference name="StatusBarBackgroundColor" value="#000000" />
   <preference name="StatusBarStyle" value="lightcontent" />
   <preference name="FadeSplashScreen" value="true"/>
-  <preference name="FadeSplashScreenDuration" value="3000"/>
+  <preference name="FadeSplashScreenDuration" value="0.5"/>
 
-  <feature name="SplashScreen">
+  <!--<feature name="SplashScreen">
     <param name="ios-package" value="CDVSplashScreen" />
     <param name="onload" value="true" />
-  </feature>
+  </feature>-->
 
   <!-- Default Icon-->
   <icon src="icon.png" />
