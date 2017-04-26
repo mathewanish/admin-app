@@ -4,6 +4,7 @@
   <description>App for DMI’s 6th annual TECH CHEF grilling competition.</description>
   <author href="http://DMInc.com" email="amathew@dminc.com">Anish Mathew</author>
 
+  <gap:plugin name="org.apache.cordova.splashscreen" />
   <plugin name="org.apache.cordova.dialogs" />
   <!-- <plugin name="org.apache.cordova.splashscreen" version="0.2.7" source="pgb"/> -->
   <plugin name="org.apache.cordova.network-information" />
@@ -23,12 +24,12 @@
   <preference name="exit-on-suspend" value="true" />
   <!-- iOS: Auto hides the splash on iOS -->
   <preference name="AutoHideSplashScreen" value="false" />
-  <preference name="SplashScreenDelay" value="4000"/>
+  <preference name="SplashScreenDelay" value="8000"/>
   <preference name="StatusBarOverlaysWebView" value="true" />
   <preference name="StatusBarBackgroundColor" value="#000000" />
   <preference name="StatusBarStyle" value="lightcontent" />
-  <preference name="FadeSplashScreen" value="true"/>
-  <preference name="FadeSplashScreenDuration" value="0.5"/>
+  <preference name="FadeSplashScreen" value="false"/>
+  <preference name="FadeSplashScreenDuration" value="0"/>
 
   <!--<feature name="SplashScreen">
     <param name="ios-package" value="CDVSplashScreen" />
