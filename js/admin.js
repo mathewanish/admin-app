@@ -1770,18 +1770,15 @@ function ShowOperations() {
 
 
 function confirmStatusChange(changedStatus) {
-    
     if (ISCLIENTAPP) {
         try {
             navigator.notification.confirm('Are you sure to change the competition status?', function (button) { if (button == 1) ChangeStatus(changedStatus); },
             'TECH CHEF', 'Yes,No');
         }
         catch (Err) {
-
         }
     }
     else {
-
         var cResult = confirm("Are you sure to change the competition status?");
 
         if (cResult)

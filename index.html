@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/jquery.mobile-1.3.0.css" />
     <link rel="stylesheet" href="css/jqm-docs.css" />
     <link rel="stylesheet" href="css/UIAdminCustom.css" />
+	<link rel="stylesheet" href="css/UIcustom-new.css" />
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
      <script type="text/javascript" charset="utf-8">
@@ -41,16 +42,30 @@
                 <table width="100%" cellpadding="0" cellspacing="0" class="LoginTable">
                     <tr>
                         <td class="LoginLeft">
-                        <span>TECH CHEF 2015 Winners</span>
-                        <img src="images/WT-photo.jpg" alt=""/></td>
-                        <td style="width:1px">&nbsp;</td>
+                           
+                            
+                            <div class="SplashWords">
+                                <p>
+                                    Welcome to DMI’s 6th annual TECH CHEF grilling competition.</p>
+                                <p>
+                                    This competition will test our team's ability to prepare various dishes for our
+                                    guest judges.</p>
+                                <p>
+                                    The most impressive team will receive a championship trophy and take home bragging
+                                    rights for the year!</p>
+                                <p class="good-luck-text">
+                                    Good luck to all!!</p>
+                            </div>
+                        </td>
                         <td class="LoginRight">
                             <div class="LoginDiv">
+							<div class="LoginDivInner">
                                 <div class="TitleDiv">
                                     <div class="SiteLogo">
-                                        <img src="images/TechChef_Logo.png"></div>
+                                        <img src="images/TC-Logo.png"></div>
                                     <div class="SiteName">
-                                        Admin Login</div>
+                                        <strong>Admin</strong> Login
+									</div>
                                 </div>
                                 <div class="LoginInputs">
                                     <div data-role="fieldcontain" data-theme="c">
@@ -67,11 +82,11 @@
                                     </div>
                                     <div data-role="fieldcontain" data-theme="c">
                                         <a href="#judgeScore" id="btlTabLoginSubmit" name="btlTabLoginSubmit" data-role="button"
-                                            data-inline="true" onclick="return AuthenticateUser('admin', true);">Submit</a>
+                                            data-inline="true" onclick="return AuthenticateUser('admin', true);">SUBMIT</a>
                                     </div>
                                 </div>
                             </div>
-                        
+							</div>
                         </td>
                     </tr>
                 </table>
@@ -98,7 +113,7 @@
                                         <label for="password">
                                         </label>
                                         <a href="#judgeScore" id="btlSPLoginSubmit" name="btlSPLoginSubmit" data-role="button"
-                                            data-inline="true" onclick="return AuthenticateUser('admin', false);">Submit</a>
+                                            data-inline="true" onclick="return AuthenticateUser('admin', false);">SUBMIT</a>
                                     </div>
                                 </div>
                             </div>
@@ -241,7 +256,6 @@
             <div data-role="navbar" data-theme="e">
                 <ul data-theme="e">
                     <li><a href="#judgeScore">Score</a></li>
-                    <li><a href="#employeeScore" class="ui-btn-active ui-state-persist highlight " style="background-color:#ffffff !important;">
     Employee
     Score
 </a></li>

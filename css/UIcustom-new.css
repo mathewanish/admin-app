@@ -1,8 +1,27 @@
+@font-face {
+  font-family: 'ralewayregular';
+  src: url("../fonts/raleway-regular-webfont.eot");
+  src: url("../fonts/raleway-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/raleway-regular-webfont.woff2") format("woff2"), url("../fonts/raleway-regular-webfont.woff") format("woff"), url("../fonts/raleway-regular-webfont.ttf") format("truetype"), url("../fonts/raleway-regular-webfont.svg#ralewayregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'ralewaysemibold';
+  src: url("../fonts/raleway-semibold-webfont.eot");
+  src: url("../fonts/raleway-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/raleway-semibold-webfont.woff2") format("woff2"), url("../fonts/raleway-semibold-webfont.woff") format("woff"), url("../fonts/raleway-semibold-webfont.ttf") format("truetype"), url("../fonts/raleway-semibold-webfont.svg#ralewaysemibold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'ralewaylight';
+  src: url("../fonts/raleway-light-webfont.eot");
+  src: url("../fonts/raleway-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/raleway-light-webfont.woff2") format("woff2"), url("../fonts/raleway-light-webfont.woff") format("woff"), url("../fonts/raleway-light-webfont.ttf") format("truetype"), url("../fonts/raleway-light-webfont.svg#ralewaylight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+
+
 body{
 background-color: #f2bd72/*{c-body-background-color}*/;
 }
-
-
 
 .ui-grid-a{
 margin-top:0.8em !important
@@ -54,7 +73,7 @@ border:0;
 	border: 1px solid 		#333 /*{c-bup-border}*/;
 	background: 			#eee /*{c-bup-background-color}*/;
 	color: 					#fff !important /*{c-bup-color}*/;
-	text-shadow: 0 /*{c-bup-shadow-x}*/ 1px /*{c-bup-shadow-y}*/ 0 /*{c-bup-shadow-radius}*/ #777 /*{c-bup-shadow-color}*/;
+	text-shadow: 0 /*{c-bup-shadow-x}*/ 0 /*{c-bup-shadow-y}*/ 0 /*{c-bup-shadow-radius}*/ #777 /*{c-bup-shadow-color}*/;
 	background-image: -webkit-gradient(linear, left top, left bottom, from( #f9c635 /*{c-bup-background-start}*/), to( #e9a80b /*{c-bup-background-end}*/)); /* Saf4+, Chrome */
 	background-image: -webkit-linear-gradient( #f9c635 /*{c-bup-background-start}*/, #e9a80b /*{c-bup-background-end}*/); /* Chrome 10+, Saf5.1+ */
 	background-image:    -moz-linear-gradient( #f9c635 /*{c-bup-background-start}*/, #e9a80b /*{c-bup-background-end}*/); /* FF3.6 */
@@ -62,7 +81,7 @@ border:0;
 	background-image:      -o-linear-gradient( #f9c635 /*{c-bup-background-start}*/, #e9a80b /*{c-bup-background-end}*/); /* Opera 11.10+ */
 	background-image:         linear-gradient( #f9c635 /*{c-bup-background-start}*/, #e9a80b /*{c-bup-background-end}*/);
 	background-image:none; 
-	background:#117474;
+	background:#FF9C22;
 	width:100%;
 	font-weight:normal
 }
@@ -87,7 +106,7 @@ border:0;
 
 
 .ui-overlay-e {
-background:url(../images/woodbg.jpg) ;
+background-color:#f5c98c;
 }
 
 
@@ -111,7 +130,7 @@ font-size:1em
 }
 
 input.ui-input-text, textarea.ui-input-text{
-font-size:0.9em;
+font-size:1em;
 background-color:#FFF !important;
 font-weight:normal !important;
 }
@@ -131,6 +150,12 @@ border:1px
 width:100% !important;
 height:100% !important
 }
+.LoginImgDiv img{
+width:100%;
+height:auto;
+position:relative;
+top:5px;
+margin-top:10px}
 
 .LoginInputsSP{
 width:180px ;
@@ -170,11 +195,12 @@ border: 1px solid #555
 
 
 
+
 .ui-content {
     border-width: 0;
     overflow-x: hidden;
     overflow-y: visible;
-    padding: 0;
+    padding: 20px 15px 0;
 }
 
 
@@ -192,10 +218,11 @@ width:auto;
 
 .SiteName{
 font-family:Arial,sans-serif;
-font-size:1em;
-color:#117474;
+font-size:1.2em;
+color:#000;
 text-align:center
 }
+
 
 /*---SMART PHONE CLASSES--*/
 
@@ -209,7 +236,7 @@ margin:0 auto;
 font-family:Arial, sans-serif;
 color:#fff/*{c-body-color}*/;
 text-shadow: 1px /*{c-body-shadow-x}*/ 0  #333 /*{c-body-shadow-color}*/;
-font-size:1em;
+font-size:0.95em;
 }
 
 .SplashWords p{ 
@@ -222,18 +249,22 @@ background: transparent; /* Old browsers */
 
 }
 
+
 .ui-btn-up-e {
-    background: linear-gradient(#FFEFAA, #FFE155) repeat scroll 0 0 #FADB4E;
-	background:#FADB4E !important;
-    border: 1px solid #F4C63F;
-    color: #222222;
+	background:#117474 !important;
+    border: 1px solid #117474;
+    color: #fff;
     font-weight: bold;
-    text-shadow: 0 1px 0 #FFFFFF;
+    text-shadow: none;
 	font-family: 'Arvo', 'serif';
 	font-family:Helvetica, Arial, sans-serif;
 }
 .ui-btn-up-e:visited, .ui-btn-up-e a.ui-link-inherit {
-    color: #222222;
+    color: #fff;
+}
+
+.ui-radio-on.ui-btn-active{
+background:#ff8a08;
 }
 
 .LogoHolder{
@@ -245,16 +276,24 @@ margin-bottom:20px
 height:150px;
 width:auto
 }
-
+input:focus ,.ui-input-text.ui-focus{
+    outline: none !important;
+	box-shadow:none !important;
+	color:#333 !important;
+	background:#fff !important;
+}
+.LoginDiv .ui-btn-inner{
+	color:#e91c30;
+	font-size: 20px !important;
+}
 @media screen and (min-width:320px) {
 
 .WelcomePara { display:none } 
 	
 .tcb{
-background:#f2bd72 url(../images/TCBackground-small.jpg) !important ;
+background-image:url(../images/TCBackground.jpg) !important ;
 background-position:center top;
-background-repeat:no-repeat !important;
-background-size:100% auto!important;	
+background-size:cover!important;	
 }
 
 .ui-field-contain .ui-controlgroup-controls {
@@ -276,10 +315,15 @@ background-size:100% auto!important;
 }
 
 .LoginHolderSP{
-min-height:420px;
-min-width:320px;
-width:100%;
-height:100%;
+    min-height: 420px;
+    /* min-width: 300px; */
+    width: 100%;
+    height: 100%;
+	
+	}
+
+.LoginHolderSP{
+background: #f7deb6; /* Old browsers */
 
 }
 
@@ -302,7 +346,7 @@ background:url(../images/napkin-320.png) no-repeat;
 
 .LoginDiv{
 width:85%;
-margin:60px auto 0;
+margin:20px auto 0;
 position:relative;
 z-index:10;
 }
@@ -313,7 +357,7 @@ margin-bottom:5px
 }
 
 .LogoHolder img{
-height:80px;
+height:100px;
 width:auto
 }
 
@@ -352,8 +396,10 @@ width:100%
 float:none;
 margin:0;
 width:100%;
-background:#56bebd;
+background:#FDAE4C;
 color: #fff /*{c-bup-color}*/;
+text-shadow: 0 /*{c-bup-shadow-x}*/ 0 /*{c-bup-shadow-y}*/ 0 /*{c-bup-shadow-radius}*/ #777 /*{c-bup-shadow-color}*/;
+font-weight:normal
 }
 
 .LoginInputs .ui-btn-corner-all {
@@ -433,7 +479,7 @@ div#btnSubmitScore  .ui-btn-corner-all {
 }
 
 .ui-overlay-e {
-background:url(../images/woodbg-320.jpg) ;
+background-color:#f5c98c;
 }
 
 .submitMessage
@@ -447,59 +493,48 @@ background:url(../images/woodbg-320.jpg) ;
 
 @media screen and (min-width:480px) {
 	
-.tcb{
-background-size:100% auto!important;	
-}
-
-.LogoHolder{
-margin-bottom:10px
-}
-
-.LogoHolder img{
-height:110px;
-width:auto
-}
-
 .LoginDiv{
 width:85%;
-margin:150px auto 0;
+margin:100px auto ;
 }
 
-.cutlery{
-height:270px;
-width:290px;
-background:transparent url(../images/Judgebg-360.png) no-repeat left bottom !important ;
-position:absolute;
-bottom:0;
+
+.LogoHolder img {
+height: 135px;
 }
 
-.napkin{
-position:absolute;
-right:0; 
-bottom:0;
-height:250px;
-width:140px;
-background:url(../images/napkin-360.png) no-repeat;
+.SiteName {
+font-size: 1.5em;
 }
 }
 
 
 @media screen and (min-width:590px) {
 	
-.tcb{
-background-size:100% auto!important;	
-}
 
 .LogoHolder img{
-height:130px;
+height:150px;
 width:auto
 }
 
-.LoginHolder{
+/* .LoginHolder{
 display:block !important
+} */
+
+.LoginHolder{
+    min-height: 650px;
+    /* min-width: 300px; */
+    width: 100%;
+    height: 100%;
+	margin-top: 50px
+
+}
+
+.LoginHolder{
+
 }
 .LoginTable{
-width:99%;
+width:95%;
 margin:0 auto;
 }
 
@@ -510,10 +545,11 @@ display:none
 .LoginRight{
 width:100% ;
 vertical-align:middle;
+
 }
 .LoginDiv{
-width:80%;
-margin:200px auto 0;
+width:90%;
+margin:40px auto 20px ;
 }
 
 #btlTabLoginSubmit{
@@ -596,7 +632,7 @@ margin-top:0.5em !important
 }
 
 .ui-overlay-e {
-background:url(../images/woodbg.jpg) ;
+background-color:#f5c98c;
 }
 
 }
@@ -608,9 +644,9 @@ background:url(../images/woodbg.jpg) ;
 /*---IPAD CLASSES--*/
 .tcb{
 
-	background-image:url(../images/TCBackground-ipad-potrait.jpg) !important ;
-	background-position:left top;
-	background-size: 100% auto !important
+background-image:url(../images/TCBackground.jpg) !important ;
+background-position:left top;
+background-size: cover !important
 }
 
 #scoreTab{
@@ -645,18 +681,18 @@ margin-top:0
 margin:0
 }
 
-.LoginTable{
-width:99%;
-margin:0 auto;
-}
 
+/* .LoginHolder{
+margin-top: 215px;
+display:block !important
+} */
 
 .LoginLeft , .SplashWords{
 display:block
 }
 .LoginLeft{
 width:45%;
-padding:5px;
+padding:0;
 vertical-align:middle;
 }
 
@@ -667,20 +703,21 @@ vertical-align:middle;
 
 
 .LoginDiv{
-margin:150px auto 0;
+margin:50px auto 20px ;
 }
+
 
 
 
 .SplashWords{
-margin:300px auto 0;
+margin:150px auto 0;
 visibility:visible;
 width:350px
 }
 
-.LoginHolder{
+/* .LoginHolder{
 display:block !important
-}
+} */
 
 .LoginWord{
 font-size:16px;
@@ -824,9 +861,6 @@ background-color:#fbbd01;
 width:33%;
 }
 
-.Desserts{
-auto;
-}
 
 .Appetizers div
 {
@@ -875,11 +909,11 @@ font-family:Helvetica, Arial, sans-serif;
 }
 
 .ui-btn-hover-e {
-    background: linear-gradient(#FFF5BA, #FBDD52) repeat scroll 0 0 #FBE26F;
-    border: 1px solid #F2C43D;
-    color: #111111;
+    background:#52b5b4;
+    border: 1px solid #52b5b4;
+    color: #fff !important;
     font-weight: bold;
-    text-shadow: 0 1px 0 #FFFFFF;
+    text-shadow:none;
 }
 
 .ui-btn-up-a {
@@ -1136,11 +1170,7 @@ padding:17px 10px 0;
 
 @media only screen and (min-width :900px)  {
 	
-.tcb{
-background-image:url(../images/TCBackground-ipad.jpg) !important ;
-background-position:left top;
-background-size: 100% auto !important
-}
+
 
 .ScoreHolder{
 width:650px ;
@@ -1195,28 +1225,19 @@ bottom:0;
 .LoginLeft{
 width:45%;
 vertical-align:middle;
-padding:0 30px 20px;
+
 }
 
-.LoginDiv{
-width:55%;
-margin:0px auto 0;
-margin-top:50px
+
+.LoginHolder {
+
+    margin-top: 115px;
 }
 
-.SplashWords{
-margin-top:250px;
-}
 
 
 }
 
-@media only screen and (min-width :1024px)  {
-	
-body{
-background-size: 100% auto !important;
-}
-}
 
 
 @media only screen and (min-width :1025px)  {
@@ -1226,7 +1247,7 @@ background-size: 100% auto !important;
 	height:100%;
 background-image:url(../images/TCBackground.jpg) !important ;
 background-position:left top;
-background-size: 100% AUTO!important
+background-size: cover!important
 }
 
 .LoginLeft {
@@ -1236,9 +1257,6 @@ width:50%
 .LoginRight {
 width:50%
 }
-.LoginDiv {
-margin-top:0
-}
 
 .SplashWords{
 width:500px;
@@ -1246,13 +1264,527 @@ width:500px;
 }
 
 
+body{
+font-family: 'ralewayregular';
+}		
+input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff;
+}
+input::-moz-placeholder { /* Firefox 19+ */
+  color: #fff;
+}
+input:-ms-input-placeholder { /* IE 10+ */
+  color: #fff;
+}
+input:-moz-placeholder { /* Firefox 18- */
+  color: #fff;
+}
+div#login, 
+div#login .ui-content,
+.LoginTable {
+    height: 100%;
+}
+.ui-body input {
+    min-height: 22px;
+    font-size: 15px;
+}
+.LoginDivInner {
+    width: 86%;
+    margin: 0 auto;
+}
+
+.ui-content {
+    border-width: 0;		  
+    overflow-x: hidden;		  
+    overflow-y: hidden;		 
+    padding: 20px 15px 0;		
+}		
+.SiteName{
+	font-family: 'ralewayregular';	
+	font-size:1.2em;		
+	color:#000;		
+	text-align:center		
+}	
+.SplashWords{
+	margin:0 auto;
+	font-family: 'ralewayregular';
+	color:#fff/*{c-body-color}*/;
+	text-shadow: 1px /*{c-body-shadow-x}*/ 0  #333 /*{c-body-shadow-color}*/;
+	font-size:0.95em;
+}
+
+.SplashWords p {
+    padding: 0;
+    margin: 2px 15px 10px 70px;
+}
+.good-luck-text{
+    font-size:28px;
+}
+ 
+.ui-btn-up-e {
+    font-family: 'ralewayregular';
+}
+.LoginInputs{
+	width:100% ;
+}
+.UserDiv{
+	font-family: 'ralewayregular';
+}
+.ScoreLeft{
+	font-family: 'ralewayregular';
+}
+.ui-body-d, .ui-overlay-d{
+	font-family: 'ralewayregular';
+}
+.LoginDiv .ui-btn-inner{
+	color:#e91c30;
+	font-size: 20px !important;
+}
+@media screen and (min-width:480px) {
+    
+	.SiteName {
+		font-size: 28px;
+		text-shadow: none;
+		text-transform: uppercase;
+		color: rgba(255, 255, 255, 0.9);
+		font-family: 'ralewaylight';
+	}
+	.SiteName strong{
+		font-family: 'ralewaysemibold';
+	}
+}
+
+@media screen and (min-width:590px) {
+	.LoginTable{
+		width:100%;
+	}
+	.LoginRight{
+		vertical-align:bottom;
+	}
+	.LoginDiv{
+		width:100%;
+		margin:40px auto 20px ;
+		background: #e91c30; /* Old browsers */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f9da8b',GradientType=1 ); /* IE6-9 */
+	}
+	#btlTabLoginSubmit {
+		margin-top: 1.1em;
+		background: #fff;
+		border: 1px solid #fff;
+		font-size: 24px;
+		border-radius: 20px;
+	}
+	.ScoreLeft{
+		font-family: 'ralewayregular';
+	}
+	.SiteLogo img {
+		height: 150px;
+		width: auto;
+	}
+}
+
+@media screen and (min-width:768px) {
+    
+/*---IPAD CLASSES--*/
+	.tcb{
+		background-image:url(../images/ipad-landscape-bg.jpg) !important ;
+		background-position:left top;
+		background-size: cover !important
+	}
+	.LoginLeft {
+		display:table-cell;
+	}
+	.LoginLeft{
+		width:45%;
+		padding:0;
+		vertical-align:bottom;
+		padding-bottom: 100px;
+	}
+ 
+	.LoginRight{
+		width:40%;
+		vertical-align:bottom;
+		padding-bottom: 100px;
+		min-width: 220px;
+		padding-right: 100px;
+	}
+
+	.LoginDiv{
+		margin:0px auto 0px ;
+		padding: 20px 10px 30px;
+		}
+	.SplashWords{
+		margin:150px auto 0;
+		visibility:visible;
+		width:100%;
+		padding: 15px 0;
+		background: rgba(3,3,3,0.66);
+		background: -moz-linear-gradient(left, rgba(3,3,3,0.66) 0%, rgba(0,0,0,0.38) 81%, rgba(0,0,0,0.36) 82%, rgba(0,0,0,0.08) 100%);
+		background: -webkit-gradient(left top, right top, color-stop(0%, rgba(3,3,3,0.66)), color-stop(81%, rgba(0,0,0,0.38)), color-stop(82%, rgba(0,0,0,0.36)), color-stop(100%, rgba(0,0,0,0.08)));
+		background: -webkit-linear-gradient(left, rgba(3,3,3,0.66) 0%, rgba(0,0,0,0.38) 81%, rgba(0,0,0,0.36) 82%, rgba(0,0,0,0.08) 100%);
+		background: -o-linear-gradient(left, rgba(3,3,3,0.66) 0%, rgba(0,0,0,0.38) 81%, rgba(0,0,0,0.36) 82%, rgba(0,0,0,0.08) 100%);
+		background: -ms-linear-gradient(left, rgba(3,3,3,0.66) 0%, rgba(0,0,0,0.38) 81%, rgba(0,0,0,0.36) 82%, rgba(0,0,0,0.08) 100%);
+		background: linear-gradient(to right, rgba(3,3,3,0.66) 0%, rgba(0,0,0,0.38) 81%, rgba(0,0,0,0.36) 82%, rgba(0,0,0,0.08) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#030303', endColorstr='#000000', GradientType=1 );
+	}
+	.LoginInputs{
+		width:100%;
+	}
+	.LoginInputs .ui-body-c,
+	.LoginInputs .ui-overlay-c{
+		background-image: none !important;
+		background: transparent !important;
+		border: 1px solid #fff;
+		color: #fff ;
+		border-radius: 20px;
+		text-shadow: none;
+		padding-left: 25px;
+		font-size: 18px;
+		font-weight: normal !important;
+		font-family: 'ralewaylight';
+	}
+	.TitleDiv {
+		font-family: 'ralewayregular';
+	}
+	.SiteName {
+		font-family: 'ralewayregular';
+		font-size: 0.9em;
+		text-align: center;
+		text-shadow: none;
+		color:#fff;
+	}
+	.ui-body-e .ui-content{
+		padding:0 ;
+		font-family: 'ralewayregular';
+	}
+	.ui-content { border-width: 0; overflow: hidden; overflow-x: hidden; padding: 0; }
+	.TopCategories td{
+		font-family:Helvetica, Arial, sans-serif;
+		font-family: 'ralewayregular';
+		font-size:1.2em;
+		background-color:#FC0;
+		text-shadow: 1px /*{e-body-shadow-x}*/ 1px /*{e-body-shadow-y}*/ 0 /*{e-body-shadow-radius}*/   #555 /*{e-body-shadow-color}*/;
+	}
+	.ui-link-inherit{
+		font-family:Helvetica, Arial, sans-serif;
+		font-family: 'ralewayregular';
+	}
+	
+	.TeamDiv{
+		font-family:Helvetica, Arial, sans-serif;
+		font-family: 'ralewayregular';
+		color:#ffffff;
+	}
+	.ui-mobile .ui-header .ui-title{
+		font-size: 1.5em; 
+		font-family:Helvetica, Arial, sans-serif;
+		font-family: 'ralewayregular';
+		color:#f8f8f8;
+		text-shadow: 1px 1px #777;
+	}
+	.ScoreLeft{
+		font-family:Helvetica, Arial, sans-serif;
+		font-family: 'ralewayregular';
+		font-weight:bold;
+		width:250px 
+	}
+	.LoginLeft{
+		width:45%;
+		vertical-align:bottom;
+	}
+	.LoginHolder {
+		margin-top: 0px;
+	}
+ 
+}
+@media only screen and (min-width :1025px)  {
+	 
+	.tcb{
+		width:100%;
+		height:100%;
+		background-image:url(../images/ipad-landscape-bg.jpg);
+		background-position:left top;
+		background-size: cover!important
+	}
+ 
+	.LoginRight {
+		width: 20%;
+		min-width: 260px;
+		padding-right: 100px;
+	}
+}
 /* all media Queries */
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-/* Styles */
+	.tcb {
+		background-image:url(../images/Login_Screen_bg_2.jpg) !important ;
+		background-color:#e91c30;
+		background-position: center bottom;
+		background-size: cover!important;
+	}
+	.LoginHolderSP {
+		background: transparent;
+	}
+	.Login{
+		vertical-align:top;
+	}
+	.LogoHolder img {
+		height: 175px;
+		width: auto;
+	}
+	.SiteName {
+		font-family: 'ralewayregular';
+		color: #000;
+		text-shadow: none;
+		text-align: center;
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 24px;
+		margin-bottom: 15px;
+		padding-bottom: 15px;
+		/* border-bottom: 1px solid; */
+	}
+	.LoginInputs .ui-body-c, .LoginInputs .ui-overlay-c {
+		border-radius: 10px;
+	}
+	input:focus ,.ui-input-text.ui-focus{
+		outline: none !important;
+		box-shadow:none !important;
+		color:#333 !important;
+		background:#fff !important;
+	}
+	.LoginInputs .ui-btn-corner-all {
+		-webkit-border-radius: 0 /*{global-radii-buttons}*/;
+		border-radius: 0 /*{global-radii-buttons}*/;
+		background: #fff;
+		border: 1px solid #fff;
+		border-radius: 20px;
+	}
+	.ui-field-contain {
+		margin-bottom: 15px;
+	}
+	.Login .ui-field-contain input.ui-input-text {
+		padding-left: 0px !important;
+		background: rgba(255, 253, 253, 0.2) !important;
+		color:#fff !important;
+		border: 1px solid #fff !important;
+		border-radius: 20px !important;
+		font-family: 'ralewaylight';
+		font-weight: normal !important;
+		margin-right: -20px !important;
+		padding-left: 20px !important;
+		position: relative;
+		right: 0;
+		width: 94%;
+	}
+	.ui-field-contain .ui-btn-inner{
+		border:none !important;
+		top: 2px;
+		font-size: 18px !important;
+	}
+	.LoginDiv {
+		width: 95%;
+	}
+	.LoginInputs .ui-body-c, .LoginInputs .ui-overlay-c {
+		background-image: none !important;
+		background-color: rgba(255, 255, 255, 0) !important;
+		border: none;
+		padding: 0;
+	}
+	.LogoHolder {
+		margin-bottom: 5px;
+		position: relative;
+		top: -40px;
+	}
+	.ScoreRight {
+		width: 100% !important;
+	}
+	.ScoreHolder {
+		width: 90%;
+		margin: 0.8em auto 0;
+	}
+	.ui-radio {
+		width: 16.60%;
+	}
 }
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 720px) {
+	.tcb {
+		background-image:url(../images/Chef-Mobile.jpg) !important ;
+		background-color:#e91c30;
+		background-position: center bottom;
+		background-size: cover!important;
+	}
+	.ui-controlgroup-horizontal .ui-checkbox .ui-btn-inner, .ui-controlgroup-horizontal .ui-radio .ui-btn-inner {
+		padding: 0;
+	}
+	.ui-controlgroup .ui-checkbox label, .ui-controlgroup .ui-radio label {
+		font-size: 14px;
+		text-align: center;
+		padding: 10px 0 !important;
+	}
+	.LoginHolderSP {
+		background: transparent;
+	}
+	.Login{
+		vertical-align:bottom;
+	}
+	
+	.SiteName {
+		font-family: 'ralewayregular';
+		color: #000;
+		text-shadow: none;
+		text-align: left;
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 16px;
+		margin-bottom: 0px;
+		padding-bottom: 8px;
+		/* border-bottom: 1px solid; */
+		padding-top: 10px;
+	}
+	.LoginInputs .ui-body-c, .LoginInputs .ui-overlay-c {
+		border-radius: 10px;
+	}
+	.LoginInputs .ui-btn-corner-all {
+		-webkit-border-radius: 0 /*{global-radii-buttons}*/;
+		border-radius: 0 /*{global-radii-buttons}*/;
+		background: #fff;
+		border: 1px solid #fff;
+		border-radius: 20px;
+		margin-top: 10px;
+	}
+	.ui-field-contain {
+		margin-bottom: 15px;
+	}
+	.Login .ui-field-contain input.ui-input-text {
+		padding-left: 0px !important;
+		background: rgba(255, 253, 253, 0.2) ;
+		color:#fff ;
+		border: 1px solid #fff !important;
+		border-radius: 20px !important;
+		/* font-family: 'ralewaylight'; */
+		font-weight: normal !important;
+		margin-right: -20px !important;
+		padding-left: 20px !important;
+		position: relative;
+		right: 0;
+		width: 100%;
+		font-size:13px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		text-shadow:none;
+	}
+	input:focus ,.ui-input-text.ui-focus{
+		outline: none !important;
+		box-shadow:none !important;
+		color:#333 !important;
+		background:#fff !important;
+		border-radius:20px !important;
+	}
+	.ui-content {
+		padding: 0px 15px 0;
+	}
+	.ui-field-contain .ui-btn-inner {
+		border: none !important;
+		top: 2px;
+		font-size: 14px;
+		padding: 6px;
+	}
+	.LoginDiv {
+		width: 100%;
+		float: left;
+		background: rgba(233, 28, 48, 0.81);
+		border-radius:10px;
+		padding:5px 0;
+		bottom: 70px;
+		box-shadow: 0px 0px 7px 0px #555;
+	}
+	.LoginInputs .ui-body-c, .LoginInputs .ui-overlay-c {
+		background-image: none !important;
+		background-color: rgba(255, 255, 255, 0);
+		border: none;
+		padding: 0;
+	}
+	.LogoHolder {
+		margin-bottom: 5px;
+		top: 40%;
+		width: 32%;
+		float: left;
+	}
+	.LoginInputs {
+		width: 67%;
+		float: right;
+		padding-right: 15px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.LogoHolder img {
+		height: auto;
+		width: 100%;
+		/* position: absolute; */
+		/* left: -5px; */
+		top: 24%;
+		position: relative;
+		margin-top: 50px;
+	}
+	.ScoreRight {
+		width: 100% !important;
+	}
+	.ScoreHolder {
+		width: 90%;
+		margin: 0.8em auto 0;
+	}
+	.ui-radio {
+		width: 16.60%;
+	}
+}
+@media only screen and (min-device-width : 640px) and (max-device-width : 767px) {
+	.LogoHolder {
+		margin-bottom: 5px;
+		top: 40%;
+		width: 28%;
+		float: left;
+	}
+	.LoginInputs {
+		width: 71%;
+		float: right;
+		padding-right: 15px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.LogoHolder img {
+		height: auto;
+		width: 100%;
+		/* position: absolute; */
+		/* left: -5px; */
+		top: 24%;
+		position: relative;
+		margin-top: 20px;
+	}
+	.Login .ui-field-contain input.ui-input-text {
+		
+		font-size: 18px !important;
+		height: 45px;
+		
+	}
+	.SiteName {
+	
+		font-size: 22px;
+		
+	}
+	.ui-field-contain .ui-btn-inner {
+		
+		font-size: 18px;
 
+	}
+}
 /* Smartphones (landscape) ----------- */
 @media only screen and (min-width : 321px) {
 /* Styles */
@@ -1265,7 +1797,21 @@ width:500px;
 
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-/* Styles */
+.SplashWords p {
+		font-size: 18px !important;
+	}
+	.SplashWords p.good-luck-text{
+		font-size: 24px !important;
+	}
+}
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+.SplashWords p {
+		font-size: 18px !important;
+	}
+	.SplashWords p.good-luck-text{
+		font-size: 24px !important;
+	}
 }
 
 /* iPads (landscape) ----------- */
@@ -1276,6 +1822,29 @@ width:500px;
 		background-image:url(../images/ipad-landscape-bg.jpg);
 		background-position:left top;
 		background-size: cover!important
+	}
+	.LoginLeft,.LoginRight{
+		background: transparent;
+	}
+	.LoginTable {
+		position:relative;
+		top:0;
+	}
+	.SiteLogo img {
+		height: 150px;
+		width: auto;
+	}
+	input:focus ,.ui-input-text.ui-focus{
+		outline: none !important;
+		box-shadow:none !important;
+		color:#333 !important;
+		background:#fff !important;
+	}
+	.SplashWords p {
+		font-size: 18px !important;
+	}
+	.SplashWords p.good-luck-text{
+		font-size: 24px !important;
 	}
 }
 
@@ -1292,7 +1861,7 @@ width:500px;
 		margin-top:0;
 	}
 	.LoginRight{
-		background: #e91c30;
+		background: #e91c30 !important;
 		padding-right:00px !important;
 		padding-bottom:100px;
 		vertical-align: middle;
@@ -1300,6 +1869,11 @@ width:500px;
 	.LoginLeft{
 		vertical-align: top;
 		padding-bottom:200px;
+		background: transparent;
+	}
+	.SiteLogo img {
+		height: 150px;
+		width: auto;
 	}
 	.LoginDiv {
 		width: 95%;
@@ -1307,12 +1881,27 @@ width:500px;
 	.SplashWords {
 		margin: 90px auto 0;
 	}
+	.LoginTable {
+		position:relative;
+		top:0;
+	}
+	input:focus ,.ui-input-text.ui-focus{
+		outline: none !important;
+		box-shadow:none !important;
+		color:#333 !important;
+		background:#fff !important;
+	}
 }
 /**********
 iPad 3
 **********/
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
-/* Styles */
+	.SplashWords p {
+		font-size: 18px !important;
+	}
+	.SplashWords p.good-luck-text{
+		font-size: 24px !important;
+	}
 }
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
@@ -1390,4 +1979,94 @@ iPad 3
 @media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
 /* Styles */
 }
+
+@media screen and (min-width: 768px)
+{
+	.LoginLeft,.LoginRight {
+		
+		background: transparent;
+	}
+	.LoginTable {
+		position: relative;
+		top: 0;
+	}
+	input:focus ,.ui-input-text.ui-focus{
+		outline: none !important;
+		box-shadow:none !important;
+		color:#333 !important;
+		background:#fff !important;
+	}
+}
+
+
+
+@media only screen and (min-device-width : 1025px) and (max-device-width : 2048px) {
+	.LoginLeft,.LoginRight{
+		vertical-align: middle;
+	}
+	.SplashWords p {
+		font-size: 24px;
+	}
+	input:focus ,.ui-input-text.ui-focus{
+		outline: none !important;
+		box-shadow:none !important;
+		color:#333 !important;
+		background:#fff !important;
+		border-radius:20px !important;
+	}
+	.SplashWords {
+		margin: 0px auto ;
+	}
+	.SplashWords p {
+		font-size: 24px;
+	}
+}
+@media only screen and (min-device-width : 2048px) and (max-device-width : 2048px) {
+	.LoginLeft,.LoginRight{
+		vertical-align: middle;
+	}
+	.SplashWords p {
+		font-size: 24px;
+	}
+	input:focus ,.ui-input-text.ui-focus{
+		outline: none !important;
+		box-shadow:none !important;
+		color:#333 !important;
+		background:#fff !important;
+		border-radius:20px !important;
+	}
+	.SplashWords {
+		margin: 0px auto ;
+	}
+	.SplashWords p {
+		font-size: 24px;
+	}
+}
+@media only screen and (min-device-width : 1025px) and (max-device-width : 2047px) and (orientation : landscape) {
+	.LoginLeft,.LoginRight{
+		vertical-align: bottom;
+	}
+	.SplashWords p {
+		font-size: 22px !important;
+	}
+	.SplashWords p.good-luck-text{
+		font-size: 28px !important;
+	}
+}
+.Scoretable th.anchorcell {
+    background-color: #931349;
+    cursor: pointer;
+    font-weight: normal;
+}
+.ui-header.ui-bar-e.ui-header-fixed.slidedown .ui-btn-inner{
+	color:#222 !important;
+}
+h1.ui-title {
+    padding-left: 70px !important;
+}
+a.ui-btn-left.ui-btn.ui-shadow.ui-btn-corner-all.ui-btn-icon-left.ui-btn-up-e {
+    position: absolute;
+    top: 12px;
+}
+
 

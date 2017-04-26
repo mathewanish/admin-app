@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <widget xmlns = "http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.DMI.aTechChef" version="0.0.2">
   <name>aTECH CHEF</name>
-  <description>App for DMI’s 5th annual TECH CHEF grilling competition.</description>
+  <description>App for DMI’s 6th annual TECH CHEF grilling competition.</description>
   <author href="http://DMInc.com" email="amathew@dminc.com">Anish Mathew</author>
 
   <plugin name="org.apache.cordova.dialogs" />
-  <plugin name="org.apache.cordova.splashscreen" version="0.2.7" source="pgb"/>
+  <!-- <plugin name="org.apache.cordova.splashscreen" version="0.2.7" source="pgb"/> -->
   <plugin name="org.apache.cordova.network-information" />
   <plugin name="org.apache.cordova.statusbar" />
 
@@ -15,7 +15,7 @@
   <content src="index.html" />
 
   <!-- Preferences-->
-  <preference name="phonegap-version" value="3.7.0" />
+  <preference name="phonegap-version" value="cli-6.5.0"  />
   <preference name="orientation" value="landscape" />
   <preference name="target-device" value="tablet" />
   <preference name="fullscreen" value="true" />
@@ -28,7 +28,7 @@
   <preference name="StatusBarBackgroundColor" value="#000000" />
   <preference name="StatusBarStyle" value="lightcontent" />
   <preference name="FadeSplashScreen" value="true"/>
-  <preference name="FadeSplashScreenDuration" value="0.7"/>
+  <preference name="FadeSplashScreenDuration" value="3000"/>
 
   <feature name="SplashScreen">
     <param name="ios-package" value="CDVSplashScreen" />
@@ -38,44 +38,54 @@
   <!-- Default Icon-->
   <icon src="icon.png" />
 
-  <!--Icons - iOS 7-->
-  <!-- iPhone / iPod Touch  -->
-  <icon src="icons/ios6/icon60.png" platform="ios" width="60" height="60" />
-  <icon src="icons/ios6/icon120.png" platform="ios" width="120" height="120" />
-  <!-- iPad -->
-  <icon src="icons/ios6/icon76.png" platform="ios" width="76" height="76" />
-  <icon src="icons/ios6/icon152.png" platform="ios" width="152" height="152" />
-  <!-- Settings Icon -->
-  <icon src="icons/ios6/icon29.png" platform="ios" width="29" height="29" />
-  <icon src="icons/ios6/icon58.png" platform="ios" width="58" height="58" />
-  <!-- Spotlight Icon -->
-  <icon src="icons/ios6/icon40.png" platform="ios" width="40" height="40" />
-  <icon src="icons/ios6/icon80.png" platform="ios" width="80" height="80" />
+  <!-- iPhone 6 / 6+ -->
+  <icon src="icons/ios/icon-60@3x.png" platform="ios" width="180" height="180" />
 
-  <!--Icons - iOS 6.1-->
-  <!-- iPhone / iPod Touch -->
-  <icon src="icons/ios6/icon57.png" platform="ios" width="57" height="57" />
-  <icon src="icons/ios6/icon114.png" platform="ios" width="114" height="114" />
+  <!-- iPhone / iPod Touch  -->
+  <icon src="icons/ios/icon-60.png" platform="ios" width="60" height="60" />
+  <icon src="icons/ios/icon-60@2x.png" platform="ios" width="120" height="120" />
+
   <!-- iPad -->
-  <icon src="icons/ios6/icon72.png" platform="ios" width="72" height="72" />
-  <icon src="icons/ios6/icon144.png" platform="ios" width="144" height="144" />
+  <icon src="icons/ios/icon-76.png" platform="ios" width="76" height="76" />
+  <icon src="icons/ios/icon-76@2x.png" platform="ios" width="152" height="152" />
+  <icon src="icons/ios/icon-83.5@2x.png" platform="ios" width="167" height="167" />
+
+  <!-- Settings Icon -->
+  <icon src="icons/ios/icon-small.png" platform="ios" width="29" height="29" />
+  <icon src="icons/ios/icon-small@2x.png" platform="ios" width="58" height="58" />
+  <icon src="icons/ios/icon-small@3x.png" platform="ios" width="87" height="87" />
+
+  <!-- Spotlight Icon -->
+  <icon src="icons/ios/icon-40.png" platform="ios" width="40" height="40" />
+  <icon src="icons/ios/icon-40@2x.png" platform="ios" width="80" height="80" />
+  <icon src="icons/ios/icon-40@3x.png" platform="ios" width="120" height="120" />
+
+  <!-- iPhone / iPod Touch -->
+  <icon src="icons/ios/icon.png" platform="ios" width="57" height="57" />
+  <icon src="icons/ios/icon@2x.png" platform="ios" width="114" height="114" />
+
+  <!-- iPad -->
+  <icon src="icons/ios/icon-72.png" platform="ios" width="72" height="72" />
+  <icon src="icons/ios/icon-72@2x.png" platform="ios" width="144" height="144" />
+
   <!-- iPhone Spotlight and Settings Icon -->
-  <icon src="icons/ios6/icon29.png" platform="ios" width="29" height="29" />
-  <icon src="icons/ios6/icon58.png" platform="ios" width="58" height="58" />
+  <icon src="icons/ios/icon-small.png" platform="ios" width="29" height="29" />
+  <icon src="icons/ios/icon-small@2x.png" platform="ios" width="58" height="58" />
+
   <!-- iPad Spotlight and Settings Icon -->
-  <icon src="icons/ios6/icon50.png" platform="ios" width="50" height="50" />
-  <icon src="icons/ios6/icon100.png" platform="ios" width="100" height="100" />
+  <icon src="icons/ios/icon-50.png" platform="ios" width="50" height="50" />
+  <icon src="icons/ios/icon-50@2x.png" platform="ios" width="100" height="100" />
 
   <!-- Default Splash Screen-->
   <splash src="splash.png" />
 
   <!-- iOS Splash Screen-->
   <!-- iPad -->
-  <splash src="splashes/ios/768x1024.png" platform="ios" width="768" height="1024" />
-  <splash src="splashes/ios/1024x768.png" platform="ios" width="1024" height="768" />
+  <splash src="splashes/ios/Default-Portrait.png" platform="ios" width="768" height="1024" />
+  <splash src="splashes/ios/Default-Landscape.png" platform="ios" width="1024" height="768" />
 
   <!-- Retina iPad -->
-  <splash src="splashes/ios/1536x2048.png" platform="ios" width="1536" height="2048" />
-  <splash src="splashes/ios/2048x1536.png" platform="ios" width="2048" height="1536" />
+  <splash src="splashes/ios/Default-Portrait@2x.png" platform="ios" width="1536" height="2048" />
+  <splash src="splashes/ios/Default-Landscape@2x.png" platform="ios" width="2048" height="1536" />
 
 </widget >
