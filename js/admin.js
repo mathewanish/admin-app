@@ -258,7 +258,6 @@ function RefreshPage() {
         case "judgeRating": RefreshJudgeRatings(); break;
         case "tablePage": RefreshTablePage(); break;
         case "operations": RefreshOperations(); break;
-
     }
 
     return false;
