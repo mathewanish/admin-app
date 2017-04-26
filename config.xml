@@ -3,8 +3,7 @@
   <name>aTECH CHEF</name>
   <description>App for DMI’s 6th annual TECH CHEF grilling competition.</description>
   <author href="http://DMInc.com" email="amathew@dminc.com">Anish Mathew</author>
-
-  <gap:plugin name="org.apache.cordova.splashscreen" />
+  
   <plugin name="org.apache.cordova.dialogs" />
   <!-- <plugin name="org.apache.cordova.splashscreen" version="0.2.7" source="pgb"/> -->
   <plugin name="org.apache.cordova.network-information" />
