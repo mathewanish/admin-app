@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/UIAdminCustom.css" />
 	<link rel="stylesheet" href="css/UIcustom-new.css" />
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <!--<script type="text/javascript" charset="utf-8" src="cordova.js"></script>-->
      <script type="text/javascript" charset="utf-8">
 
          // Wait for device API libraries to load
@@ -143,22 +143,28 @@
         <div class="PageTitle">
             Results<span id="jsRefresh" class="rating"><a href="#" onclick="return RefreshPage();"><img
                 src="images/refresh.png"></a></span></div>
-        <div data-role="content" data-theme="e">
+        <div data-role="content" style="overflow: auto;" data-theme=" e" id="jscoreContent">
             <div style="overflow: auto; width: inherit" id="jstableContainer">
             </div>
             <div id="jtblEnlarge" class="Enlarge" style="padding-top: 5px">
                 <a href="#" onclick="SetEnlargedTableHtml('#jstableContainer', 'judge');">
-                    <img src="images/Enlarge.png" width="80" height="30" style="border: 0"></a></div>
+                    <img src="images/Enlarge.png" width="80" height="30" style="border: 0">
+                </a>
+            </div>
             <div id="ScoreByTeam" style="overflow-x: auto; overflow-y: hidden; height: 380px">
             </div>
             <div id="jTCEnlarge" class="Enlarge">
                 <a href="#" onclick="SetChartPageProperties('team', 'judge');">
-                    <img src="images/Enlarge.png" width="80" height="30" style="border: 0"></a></div>
+                    <img src="images/Enlarge.png" width="80" height="30" style="border: 0">
+                </a>
+            </div>
             <div id="ScoreByCategory" style="overflow-x: auto; overflow-y: hidden; height: 380px">
             </div>
             <div id="jCCEnlarge" class="Enlarge">
                 <a href="#" onclick="SetChartPageProperties('category', 'judge');">
-                    <img src="images/Enlarge.png" width="80" height="30" style="border: 0"></a></div>
+                    <img src="images/Enlarge.png" width="80" height="30" style="border: 0">
+                </a>
+            </div>
         </div>
         <!-- /content -->
     </div>
