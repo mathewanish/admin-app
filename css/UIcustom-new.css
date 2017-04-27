@@ -251,14 +251,25 @@ background: transparent; /* Old browsers */
 
 
 .ui-btn-up-e {
-	background:#117474 !important;
-    border: 1px solid #117474;
+	background:#de8600 !important;
+    border: 1px solid #de8600;
     color: #fff;
     font-weight: bold;
     text-shadow: none;
 	font-family: 'Arvo', 'serif';
 	font-family:Helvetica, Arial, sans-serif;
 }
+.ui-btn-corner-all {
+    border-radius: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+}
+a.ui-btn-left.ui-btn.ui-shadow.ui-btn-corner-all.ui-btn-icon-left.ui-btn-up-e {
+    border-radius: 20px !important;
+}
+.ui-btn-inner{
+border:none;}
 .ui-btn-up-e:visited, .ui-btn-up-e a.ui-link-inherit {
     color: #fff;
 }
@@ -2059,6 +2070,9 @@ iPad 3
     font-weight: normal;
 }
 .ui-header.ui-bar-e.ui-header-fixed.slidedown .ui-btn-inner{
+		color:#fff !important;
+}
+.ui-header.ui-bar-e.ui-header-fixed.slidedown .ui-btn-active .ui-btn-inner{
 	color:#222 !important;
 }
 h1.ui-title {
