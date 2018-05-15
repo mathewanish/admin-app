@@ -4,12 +4,11 @@
   <description>App for DMI’s 6th annual TECH CHEF grilling competition.</description>
   <author href="http://DMInc.com" email="amathew@dminc.com">Anish Mathew</author>
   
-  <plugin name="org.apache.cordova.dialogs" />
+  <plugin name="cordova-plugin-dialogs" />
   <!-- <plugin name="org.apache.cordova.splashscreen" version="0.2.7" source="pgb"/> -->
-  <plugin name="org.apache.cordova.network-information" />
-  <plugin name="org.apache.cordova.statusbar" />
-  <plugin name="cordova-plugin-splashscreen" source="npm" />
-  <plugin name="cordova-plugin-splashscreen" spec="3.2.2" />
+  <plugin name="cordova-plugin-network-information" />
+  <plugin name="cordova-plugin-statusbar" />
+  <plugin name="cordova-plugin-splashscreen" />
   
   <!-- Platform on which the App is Supported -->
   <platform name="ios" />
