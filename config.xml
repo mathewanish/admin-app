@@ -69,9 +69,6 @@
   <icon src="icons/ios/icon-72.png" platform="ios" width="72" height="72" />
   <icon src="icons/ios/icon-72@2x.png" platform="ios" width="144" height="144" />
 
-  <!-- iPhone Spotlight and Settings Icon -->
-  <icon src="icons/ios/icon-small.png" platform="ios" width="29" height="29" />
-  <icon src="icons/ios/icon-small@2x.png" platform="ios" width="58" height="58" />
 
   <!-- iPad Spotlight and Settings Icon -->
   <icon src="icons/ios/icon-50.png" platform="ios" width="50" height="50" />
