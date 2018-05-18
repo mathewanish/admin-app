@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<widget xmlns = "http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.DMI.aTechChef" version="0.0.2">
+<widget xmlns = "http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.DMI.aTechChef" version="1.2018">
   <name>aTECH CHEF</name>
-  <description>App for DMI’s 6th annual TECH CHEF grilling competition.</description>
+  <description>App for DMI’s 7th annual TECH CHEF grilling competition.</description>
   <author href="http://DMInc.com" email="amathew@dminc.com">Anish Mathew</author>
   
   <plugin name="cordova-plugin-dialogs" />
