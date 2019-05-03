@@ -1,5 +1,5 @@
 ﻿//var SERVICE_BASEURL = "http://61.8.142.155:5656/";
-var SERVICE_BASEURL = "http://techchef.dminc.com/";
+var SERVICE_BASEURL = "https://dmitc.azurewebsites.net/";
 //var SERVICE_BASEURL = "http://localhost:4587/";
 //var SERVICE_BASEURL = "http://192.168.193.96:5656/";
 //var SERVICE_BASEURL = "http://61.8.142.155:5555/";
