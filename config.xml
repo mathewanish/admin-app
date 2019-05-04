@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<widget xmlns = "http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.DMI.aTechChef" version="1.2018">
+<widget xmlns = "http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.DMI.aTechChef" version="1.0.2019">
   <name>aTECH CHEF</name>
-  <description>App for DMI’s 7th annual TECH CHEF grilling competition.</description>
+  <description>App for DMI’s 8th annual TECH CHEF grilling competition.</description>
   <author href="http://DMInc.com" email="amathew@dminc.com">Anish Mathew</author>
   
   <plugin name="cordova-plugin-dialogs" />
@@ -15,7 +15,7 @@
 
   <content src="index.html" />
   <!-- Preferences-->
-  <preference name="phonegap-version" value="cli-6.5.0"  />
+  <preference name="phonegap-version" value="cli-8.1.1"  />
   <preference name="orientation" value="landscape" />
   <preference name="target-device" value="tablet" />
   <preference name="fullscreen" value="true" />
@@ -86,4 +86,7 @@
   <splash src="splashes/ios/Default-Portrait@2x.png" platform="ios" width="1536" height="2048" />
   <splash src="splashes/ios/Default-Landscape@2x.png" platform="ios" width="2048" height="1536" />
 
+  <!-- iOS only -->
+  <preference name="deployment-target" value="7.0" />
+  
 </widget >
